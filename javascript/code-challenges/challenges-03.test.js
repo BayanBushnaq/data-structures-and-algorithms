@@ -26,16 +26,13 @@ For example, typeNum([1, 'bob' ,3]) returns [1,3].
 
 const typeNum = (arr) => {
   // Solution code here...
-  let Numbers;
-  Numbers = arr.filter((val)=>{
-    if(typeof val === "number"){
-      return true ;
-      
-    }
-    
-  })
-  console.log(Numbers);
-};
+  const FILTER = arr.filter(val => !isNaN(val))
+  return FILTER;
+  };
+  
+
+  
+  
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -47,14 +44,11 @@ For example, containsAnd(['panda', 'ran', 'and']) returns ['panda', 'and'].
 
 const containsAnd = (arr) => {
   // Solution code here...
-  let andStr;
-  andStr = arr.filter(n=>{
-    if(n.includes('and')){
-      return andStr;
+ 
+ const andStr = arr.filter(val => val.includes('and'))
+    return andStr
     }
-  })
-  console.log(andStr);
-};
+;
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -66,13 +60,13 @@ For example, oddValues([1,2,3]) returns [1,3].
 
 const oddValues = (arr) => {
   // Solution code here...
-  let odd = arr.filter(val=>{
-    if(val%3==0){
+const odd = arr.filter(val=> val % 2 !== 0)
+    return odd;
 
-    }
-  })
+    };
   
-};
+  
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -84,6 +78,8 @@ For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 
 const notInFirstArray = (forbiddenValues, arr) => {
   // Solution code here...
+  const forBiddenArray = arr.filter(val => !(forbiddenValues.includes(val)))
+  return forBiddenArray;
 };
 
 /* ------------------------------------------------------------------------------------------------

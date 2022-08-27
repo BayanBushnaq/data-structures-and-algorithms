@@ -65,6 +65,11 @@ For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and
 
 const forLoopTwoToThe = (arr) => {
   // Solution code here...
+  let forLoop = []
+  for (let i = 0 ; i< arr.length;i++){
+    forLoop.push(Math.pow(2,arr[i]))
+  }
+  return forLoop;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -75,6 +80,11 @@ Write a function named forEachTwoToThe that produces the same output as your for
 
 const forEachTwoToThe = (arr) => {
   // Solution code here...
+  let Expo2=[];
+  arr.forEach(val=>{
+    Expo2.push(Math.pow(2,val))
+  })
+  return Expo2;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -85,6 +95,11 @@ Write a function named mapTwoToThe that produces the same output as your forLoop
 
 const mapTwoToThe = (arr) => {
   // Solution code here...
+  let Expo =[];
+  let valofexpo =arr.map(val=>{
+    Expo.push(Math.pow(2, val))
+  })
+  return Expo;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -99,7 +114,11 @@ For example: charCode(['h','i']) returns [104, 105].
 
 const charCode = (arr) => {
   // Solution code here...
-};
+  let charcode =[];
+ let variable = arr.map(val=> {
+  charcode.push(val.charCodeAt())});
+ return charcode;
+  };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal
@@ -113,6 +132,17 @@ For example: evenOdd([1,2,3]) returns ['odd','even','odd'].
 
 const evenOdd = (arr) => {
   // Solution code here...
+  let oddevenArr=[];
+  let oddeven=arr.map(val =>{
+    if(val % 2 == 0 ){
+      oddevenArr.push("even")
+    }else if(val % 3 == 0){
+      oddevenArr.push("odd")
+    }else if(isNaN(val)){
+      oddevenArr.push("N/A")
+    }
+  return oddevenArr;
+  })
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -270,7 +300,7 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should return an array containing the character code for each letter', () => {
     expect(charCode(['C', 'o', 'd', 'e', '3', '0', '1'])).toStrictEqual([ 67, 111, 100, 101, 51, 48, 49 ]);
     expect(charCode(['C', 'o', 'd', 'e', '3', '0', '1']).length).toStrictEqual(7);
