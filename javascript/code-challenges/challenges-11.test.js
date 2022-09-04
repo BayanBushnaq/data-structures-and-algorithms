@@ -28,6 +28,8 @@ function transformToLis(obj){
   }
  }
  return toReturn;
+
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -50,6 +52,7 @@ const count = (target, input) => {
       }
     })
     )
+
     return count;
 };
 
@@ -65,6 +68,9 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 
 const totalSum = (input) => {
   // Solution code here...
+
+
+
   let sum = 0;
   input.map(item => {
     item.map(inner => {
@@ -95,6 +101,8 @@ const divisibleByFiveTwoToThePower = (input) => {
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
+
+
 
 Write a function named findMaleAndFemale that, given the Star Wars data, below,
 returns the names of the characters whose gender is either male or female.
